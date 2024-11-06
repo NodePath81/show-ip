@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package showip;
+
+option go_package = "server/grpc-api";
+
+service ShowIPService {
+  rpc GetClientIP (ClientIPRequest) returns (ClientIPReply) {}
+}
+
+message ClientIPRequest {}
+
+message ClientIPReply {
+  string ip = 1;
+}
